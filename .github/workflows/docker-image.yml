@@ -28,7 +28,7 @@ jobs:
       #   with:
       #     username: ${{ secrets.DOCKERHUB_USERNAME }}
       #     password: ${{ secrets.DOCKERHUB_TOKEN }}
-        if: ${{ github.ref == 'refs/heads/test' }}
+        if: ${{ github.ref == 'refs/heads/main' }}
         run: |
          echo ${GITHUB_REF##*/}
       # -
