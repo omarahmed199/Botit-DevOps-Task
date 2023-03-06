@@ -31,7 +31,7 @@ jobs:
       #     password: ${{ secrets.DOCKERHUB_TOKEN }}
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
-         ls -l refs/heads/test
+         ls -l refs/heads
       # -
       #   name: Build and push
       #   uses: docker/build-push-action@v4
