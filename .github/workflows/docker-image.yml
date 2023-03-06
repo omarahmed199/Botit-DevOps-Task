@@ -22,7 +22,7 @@ jobs:
           # docker run  -d omarkorety/botit:V7
           # ip addr show
           docker ps -a
-      -
+      # -
       #   name: Set up QEMU
       #   uses: docker/setup-qemu-action@v2
       # -
