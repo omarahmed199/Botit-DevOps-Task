@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - 'main'
+      - 'test'
 
 jobs:
   docker:
@@ -12,26 +13,29 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v3
-      - name: run docker
+      # - name: run docker
+      #   run: |
+      #     docker run  -d omarkorety/botit:V7
+      #     ip addr show
+      -
+      #   name: Set up QEMU
+      #   uses: docker/setup-qemu-action@v2
+      # -
+      #   name: Set up Docker Buildx
+      #   uses: docker/setup-buildx-action@v2
+      # -
+      #   name: Login to Docker Hub
+      #   uses: docker/login-action@v2
+      #   with:
+      #     username: ${{ secrets.DOCKERHUB_USERNAME }}
+      #     password: ${{ secrets.DOCKERHUB_TOKEN }}
+        if: ${{ github.ref == 'refs/heads/test' }}
         run: |
-          docker run  -d omarkorety/botit:V7
-          ip addr show
-#       -
-#         name: Set up QEMU
-#         uses: docker/setup-qemu-action@v2
-#       -
-#         name: Set up Docker Buildx
-#         uses: docker/setup-buildx-action@v2
-#       -
-#         name: Login to Docker Hub
-#         uses: docker/login-action@v2
-#         with:
-#           username: ${{ secrets.DOCKERHUB_USERNAME }}
-#           password: ${{ secrets.DOCKERHUB_TOKEN }}
-#       -
-#         name: Build and push
-#         uses: docker/build-push-action@v4
-#         with:
-#           context: .
-#           push: true
-#           tags: omarkorety/test-botit:V1
+         cat refs/heads/test
+      # -
+      #   name: Build and push
+      #   uses: docker/build-push-action@v4
+      #   with:
+      #     context: .
+      #     push: true
+      #     tags: omarkorety/test-botit:V1
