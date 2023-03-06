@@ -2,9 +2,7 @@ name: ci
 
 on:
   push:
-    branches:
-      - 'main'
-      - 'test'
+    branches: [main,test]
 
 jobs:
   docker:
