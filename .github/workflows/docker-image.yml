@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v3
       - name: run docker
         run: |
-          docker run  -d omarkorety/test-botit:V7
+          docker run  -d omarkorety/botit
           ip addr (ip a)
 #       -
 #         name: Set up QEMU
