@@ -34,4 +34,4 @@ jobs:
 #         with:
 #           context: .
 #           push: true
-#           tags: omarkorety/test-botit:V1
+#           tags: omarkorety/test-botit:V7
