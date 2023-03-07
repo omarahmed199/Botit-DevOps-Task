@@ -9,9 +9,9 @@ pipeline {
               withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) { 
 
               sh """
-                docker build .  -t omarkorety/botit:V${BUILD_NUMBER}
+                sudo docker build .  -t omarkorety/botit:V${BUILD_NUMBER}
                 echo ${BUILD_NUMBER}
-                docker login -u ${USERNAME} -p ${PASSWORD}
+                sudo docker login -u ${USERNAME} -p ${PASSWORD}
                 docker push omarkorety/botit:V${BUILD_NUMBER}
                 echo ${BUILD_NUMBER} > ../build_num.txt
                 """
