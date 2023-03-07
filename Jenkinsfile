@@ -26,8 +26,7 @@ pipeline {
             script {
                  
                             sh """
-//                               docker stop task
-//                               docker rm task
+
                               docker run -d -p 5000:5000 --name task omarkorety/botit:V${BUILD_NUMBER}
                             """
 
