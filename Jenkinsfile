@@ -25,12 +25,17 @@ pipeline {
         stage('Deploy') {
           steps{
             script {
+                   if (env.BUILD_NUMBER == 4) {
+                        echo 'Hello from main branch'
+                        docker run -d -p 5000:5000 --name task omarkorety/botit:V${BUILD_NUMBER}
 
+                   }else {
                             sh """
                               docker stop task
                               docker rm task
                               docker run -d -p 5000:5000 --name task omarkorety/botit:V${BUILD_NUMBER}
                             """
+                   }
                 }
 
               }
